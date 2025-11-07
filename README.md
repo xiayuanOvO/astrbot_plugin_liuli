@@ -1,6 +1,4 @@
-# helloworld
-
-AstrBot 插件模板
+# 琉璃
 
 A template plugin for AstrBot plugin feature
 

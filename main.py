@@ -1,16 +1,16 @@
 from astrbot.api.event import filter, AstrMessageEvent, MessageEventResult
 from astrbot.api.star import Context, Star, register
 from astrbot.api import logger
-from config import database
+from .config import database
 
 @register("琉璃", "夏源", "来自异世界的娱乐插件", "0.0.1")
 class MyPlugin(Star):
     def __init__(self, context: Context):
         super().__init__(context)
-        database.init_db()
 
     async def initialize(self):
         """可选择实现异步的插件初始化方法，当实例化该插件类之后会自动调用该方法。"""
+        await database.init_db()
     
     # 注册指令的装饰器。指令名为 helloworld。注册成功后，发送 `/helloworld` 就会触发这个指令，并回复 `你好, {user_name}!`
     @filter.command("hi")

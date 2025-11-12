@@ -3,7 +3,7 @@ from astrbot.core.platform import AstrMessageEvent
 from ..utils.user_manager import udm
 
 
-class RegisterHandle:
+class UserHandle:
     def __init__(self):
         pass
 

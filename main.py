@@ -2,29 +2,40 @@ from astrbot.api.event import filter, AstrMessageEvent, MessageEventResult
 from astrbot.api.star import Context, Star, register
 from astrbot.api import logger
 
+from .service.sign_handle import SignHandle
 from .config import config_load
 
 
-@register("琉璃", "夏源", "来自异世界的娱乐插件", "0.0.1")
+@register(
+    "琉璃",
+    "夏源",
+    "来自异世界的娱乐插件",
+    "0.0.1",
+    "https://github.com/xiayuanOvO/astrbot_plugin_liuli"
+)
 class MyPlugin(Star):
     def __init__(self, context: Context):
         super().__init__(context)
 
-
     async def initialize(self):
         """可选择实现异步的插件初始化方法，当实例化该插件类之后会自动调用该方法。"""
         config_load()
+        self.sign = SignHandle()
 
-    
     # 注册指令的装饰器。指令名为 helloworld。注册成功后，发送 `/helloworld` 就会触发这个指令，并回复 `你好, {user_name}!`
     @filter.command("hi")
     async def reg(self, event: AstrMessageEvent):
-        """玩家注册""" # 这是 handler 的描述，将会被解析方便用户了解插件内容。建议填写。
+        """玩家注册"""  # 这是 handler 的描述，将会被解析方便用户了解插件内容。建议填写。
         user_name = event.get_sender_name()
-        message_str = event.message_str # 用户发的纯文本消息字符串
-        message_chain = event.get_messages() # 用户所发的消息的消息链 # from astrbot.api.message_components import *
+        message_str = event.message_str  # 用户发的纯文本消息字符串
+        message_chain = event.get_messages()  # 用户所发的消息的消息链 # from astrbot.api.message_components import *
         logger.info(message_chain)
-        yield event.plain_result(f"Hello, {user_name}, 你发了 {message_str}!") # 发送一条纯文本消息
+        yield event.plain_result(f"Hello, {user_name}, 你发了 {message_str}!")  # 发送一条纯文本消息
 
     async def terminate(self):
         """可选择实现异步的插件销毁方法，当插件被卸载/停用时会调用。"""
+
+    @filter.command("签到")
+    async def sign(self, event: AstrMessageEvent):
+        """玩家签到"""
+        yield self.sign.signin(event)

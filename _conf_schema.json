@@ -1,0 +1,8 @@
+{
+  "test": {
+    "description": "测试配置",
+    "hint": "这是啥玩意",
+    "type": "bool",
+    "default": true
+  }
+}

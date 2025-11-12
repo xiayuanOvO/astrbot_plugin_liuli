@@ -14,7 +14,7 @@ class ConfigManager:
         加载指定目录下的所有 JSON 配置文件
 
         Args:
-            config_dir: 配置文件目录，默认为 "config"
+            config_dir: 配置文件目录，默认为 "data/config"
         """
         if self._loaded:
             return

@@ -1,6 +1,7 @@
 from astrbot.api.event import filter, AstrMessageEvent, MessageEventResult
 from astrbot.api.star import Context, Star, register
 from astrbot.api import logger
+from astrbot.core import AstrBotConfig
 
 from .core.register_handle import RegisterHandle
 from .core.sign_handle import SignHandle
@@ -15,7 +16,7 @@ from .config import config_load
     "https://github.com/xiayuanOvO/astrbot_plugin_liuli"
 )
 class MyPlugin(Star):
-    def __init__(self, context: Context, config: dict):
+    def __init__(self, context: Context, config: AstrBotConfig):
         super().__init__(context)
         self.cfg = config
 

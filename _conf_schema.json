@@ -1,8 +1,14 @@
 {
-  "test": {
-    "description": "测试配置",
-    "hint": "这是啥玩意",
-    "type": "bool",
-    "default": true
+  "guild": {
+    "description": "冒险者工会",
+    "type": "object",
+    "items": {
+      "reflashTimes": {
+        "description": "委托刷新时间",
+        "hint": "单位（秒）",
+        "type": "int",
+        "default": 86400
+      }
+    }
   }
 }

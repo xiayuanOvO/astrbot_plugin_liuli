@@ -1,15 +1,17 @@
 import os
 import glob
+from pathlib import Path
 from typing import Any, Dict, Optional
 import orjson
 
 
 class ConfigManager:
     def __init__(self):
+        self._config_dir = None
         self._config_data: Dict[str, Any] = {}
         self._loaded = False
 
-    def load_configs(self, config_dir: str = "data/config") -> None:
+    def load_configs(self, config_dir: Path) -> None:
         """
         加载指定目录下的所有 JSON 配置文件
 
@@ -19,22 +21,21 @@ class ConfigManager:
         if self._loaded:
             return
 
-        if not os.path.exists(config_dir):
-            raise FileNotFoundError(f"配置目录不存在: {config_dir}")
+        self._config_dir = config_dir / "data/config"
+        self._config_dir.mkdir(parents=True, exist_ok=True)
 
         # 查找所有 JSON 文件
         json_pattern = os.path.join(config_dir, "*.json")
         json_files = glob.glob(json_pattern)
 
         if not json_files:
-            raise FileNotFoundError(f"在目录 {config_dir} 中未找到任何 JSON 文件")
+            return
 
         # 加载所有 JSON 文件
         for json_file in json_files:
             self._load_single_file(json_file)
 
         self._loaded = True
-        print(f"成功加载 {len(json_files)} 个配置文件")
 
     def _load_single_file(self, file_path: str) -> None:
         """加载单个 JSON 文件"""
@@ -128,7 +129,7 @@ _config_manager = ConfigManager()
 
 
 # 公共接口函数
-def config_load(config_dir: str = "data/config") -> None:
+def config_load(config_dir: Path) -> None:
     """加载配置文件"""
     _config_manager.load_configs(config_dir)
 

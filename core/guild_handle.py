@@ -3,7 +3,6 @@ import time
 
 from astrbot.core import AstrBotConfig, logger
 from astrbot.core.platform import AstrMessageEvent
-from openpyxl.styles.builtins import title
 
 from ..config import config_get
 from ..utils.user_manager import udm
@@ -28,25 +27,19 @@ class GuildHandle:
 
     async def refresh_task(self, cfg: AstrBotConfig):
         while True:
-            try:
-                logger.info('执行一次.refresh_task')
-                await self.refresh_quest(cfg)
-            except Exception as e:
-                logger.error(e)
-            finally:
-                await asyncio.sleep(TASK_SLEEP_TIME)
+            await self.refresh_quest(cfg)
+            await asyncio.sleep(TASK_SLEEP_TIME)
 
     async def refresh_quest(self, cfg: AstrBotConfig):
+        # 当前时间戳
         now_timestamp = int(time.time())
+        # 上次刷新时间
         last_timestamp = config_get("guild.lastReflashTimes", 100000)
-
-        try:
-            logger.info(cfg.get('guild'))
-        except Exception as e:
-            logger.error(e)
+        # 获取委托刷新时间
+        reflash_times = cfg.get('guild', {}).get("questReflashTimes", 86400)
 
         # 获取委托刷新周期
-        if now_timestamp - last_timestamp > cfg.get("guild.questReflashTimes"):
+        if now_timestamp - last_timestamp > reflash_times:
             logger.info("刷新委托列表")
 
     async def guild(self, event: AstrMessageEvent):

@@ -3,7 +3,7 @@
     "description": "冒险者工会",
     "type": "object",
     "items": {
-      "reflashTimes": {
+      "questReflashTimes": {
         "description": "委托刷新时间",
         "hint": "单位（秒）",
         "type": "int",

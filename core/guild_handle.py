@@ -40,7 +40,10 @@ class GuildHandle:
         now_timestamp = int(time.time())
         last_timestamp = config_get("guild.lastReflashTimes", 100000)
 
-        logger.info(f'{cfg.get('guild')}')
+        try:
+            logger.info(cfg.get('guild'))
+        except Exception as e:
+            logger.error(e)
 
         # 获取委托刷新周期
         if now_timestamp - last_timestamp > cfg.get("guild.questReflashTimes"):

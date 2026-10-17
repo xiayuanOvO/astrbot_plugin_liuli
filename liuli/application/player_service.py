@@ -13,16 +13,23 @@ class PlayerService:
         data = await self.repository.get_or_create_profile(
             "user", platform_id, player_id, initial_profile
         )
-        return PlayerProfile.from_dict(data)
+        profile = PlayerProfile.from_dict(data)
 
-    @staticmethod
-    def status(profile: PlayerProfile, fallback_name: str) -> str:
-        return (
-            f"{profile.name or fallback_name}の角色状态：\n"
-            f"👑等级：{profile.level}\n"
-            f"🩸生命：{profile.hp}\n"
-            f"💧魔力：{profile.mp}"
-        )
+        # Older profile payloads may contain player combat or race attributes.
+        # Keep only the player name; combat stats belong to pets.
+        def keep_name_only(stored: dict[str, Any]) -> None:
+            stored.clear()
+            stored.update(profile.to_dict())
+
+        await self.repository.update_profile("user", platform_id, player_id, keep_name_only)
+        return profile
+
+    async def query(self, platform_id: str, player_id: str) -> str:
+        data = await self.repository.get_profile("user", platform_id, player_id)
+        if not data:
+            return "未找到该玩家的档案。"
+        profile = PlayerProfile.from_dict(data)
+        return f"玩家：{profile.name or player_id}"
 
     async def rename(self, platform_id: str, player_id: str, new_name: str) -> str:
         new_name = new_name.strip()

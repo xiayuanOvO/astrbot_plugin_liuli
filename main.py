@@ -392,10 +392,11 @@ class LiuliPlugin(Star):
         plain = re.sub(r"^#{1,6}\s*|^>\s*|\*\*(.*?)\*\*|`([^`]*)`", lambda match: match.group(1) or match.group(2) or "", message, flags=re.MULTILINE)
         return event.plain_result(plain)
 
-    @filter.command("状态")
-    async def player_status(self, event: AstrMessageEvent):
-        profile = await self._ensure_player(event)
-        yield event.plain_result(self.players.status(profile, event.get_sender_name()))
+    @filter.command("查询")
+    async def query_player(self, event: AstrMessageEvent):
+        platform, sender_id = self._identity(event)
+        await self._ensure_player(event)
+        yield event.plain_result(await self.players.query(platform, sender_id))
 
     @filter.command("改名")
     async def rename_player(self, event: AstrMessageEvent, nickname: str | None = None):

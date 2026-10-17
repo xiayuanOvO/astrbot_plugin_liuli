@@ -1,14 +1,57 @@
 {
-  "guild": {
-    "description": "冒险者工会",
-    "type": "object",
-    "items": {
-      "questReflashTimes": {
-        "description": "委托刷新时间",
-        "hint": "单位（秒）",
-        "type": "int",
-        "default": 86400
-      }
-    }
+  "currency_name": {
+    "description": "货币名称",
+    "type": "string",
+    "default": "银币",
+    "hint": "玩家余额和奖励消息中显示的名称。修改名称不会改变现有余额。"
+  },
+  "signin_reward_monday": {
+    "description": "周一签到奖励",
+    "type": "int",
+    "default": 10,
+    "slider": {"min": 1, "max": 10000, "step": 1},
+    "hint": "每位玩家周一签到获得的货币数量。"
+  },
+  "signin_reward_tuesday": {
+    "description": "周二签到奖励",
+    "type": "int",
+    "default": 12,
+    "slider": {"min": 1, "max": 10000, "step": 1},
+    "hint": "每位玩家周二签到获得的货币数量。"
+  },
+  "signin_reward_wednesday": {
+    "description": "周三签到奖励",
+    "type": "int",
+    "default": 14,
+    "slider": {"min": 1, "max": 10000, "step": 1},
+    "hint": "每位玩家周三签到获得的货币数量。"
+  },
+  "signin_reward_thursday": {
+    "description": "周四签到奖励",
+    "type": "int",
+    "default": 16,
+    "slider": {"min": 1, "max": 10000, "step": 1},
+    "hint": "每位玩家周四签到获得的货币数量。"
+  },
+  "signin_reward_friday": {
+    "description": "周五签到奖励",
+    "type": "int",
+    "default": 18,
+    "slider": {"min": 1, "max": 10000, "step": 1},
+    "hint": "每位玩家周五签到获得的货币数量。"
+  },
+  "signin_reward_saturday": {
+    "description": "周六签到奖励",
+    "type": "int",
+    "default": 20,
+    "slider": {"min": 1, "max": 10000, "step": 1},
+    "hint": "每位玩家周六签到获得的货币数量。"
+  },
+  "signin_reward_sunday": {
+    "description": "周日签到奖励",
+    "type": "int",
+    "default": 30,
+    "slider": {"min": 1, "max": 10000, "step": 1},
+    "hint": "每位玩家周日签到获得的货币数量。"
   }
 }

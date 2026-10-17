@@ -1,0 +1,56 @@
+[
+  {
+    "pet_id": "slime",
+    "name": "史莱姆",
+    "description": "温顺而有韧性的伙伴。",
+    "base_hp": 50,
+    "hp_per_level": 8,
+    "base_mp": 20,
+    "mp_per_level": 3,
+    "base_attack": 8,
+    "attack_per_level": 2,
+    "base_defense": 2,
+    "defense_per_level": 1,
+    "speed": 4,
+    "starting_skills": ["tackle"],
+    "level_skills": [
+      {"level": 5, "skill_id": "acid_splash"}
+    ]
+  },
+  {
+    "pet_id": "wolf",
+    "name": "灰狼",
+    "description": "行动敏捷、忠诚可靠的伙伴。",
+    "base_hp": 70,
+    "hp_per_level": 10,
+    "base_mp": 14,
+    "mp_per_level": 2,
+    "base_attack": 11,
+    "attack_per_level": 2,
+    "base_defense": 3,
+    "defense_per_level": 1,
+    "speed": 8,
+    "starting_skills": ["bite"],
+    "level_skills": [
+      {"level": 5, "skill_id": "howl"}
+    ]
+  },
+  {
+    "pet_id": "fairy",
+    "name": "林地精灵",
+    "description": "擅长运用魔力保护同伴。",
+    "base_hp": 38,
+    "hp_per_level": 6,
+    "base_mp": 48,
+    "mp_per_level": 8,
+    "base_attack": 7,
+    "attack_per_level": 2,
+    "base_defense": 1,
+    "defense_per_level": 0,
+    "speed": 5,
+    "starting_skills": ["spark"],
+    "level_skills": [
+      {"level": 5, "skill_id": "mend"}
+    ]
+  }
+]

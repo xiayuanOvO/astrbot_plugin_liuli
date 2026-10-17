@@ -1,0 +1,34 @@
+[
+  {
+    "dungeon_id":"echo_forest","city_id":"brook_city","name":"回声林地","description":"源晶改变了林间回声，迷路的旅人与躁动的史莱姆在树影间徘徊。",
+    "unlock_requires":[],
+    "difficulties":[
+      {"difficulty_id":"easy","name":"简单","recommended_level":1,"enemy_level":1,"xp_multiplier":1.0,"stages":[[{"event_id":"lost_traveler","weight":1}],[{"event_id":"slime_skirmish","weight":4},{"event_id":"herb_camp","weight":2},{"event_id":"forest_cache","weight":1}]],"boss_enemy_id":"moss_guardian"},
+      {"difficulty_id":"normal","name":"普通","recommended_level":3,"enemy_level":4,"xp_multiplier":1.35,"stages":[[{"event_id":"forest_echo","weight":2},{"event_id":"slime_skirmish","weight":3}],[{"event_id":"slime_skirmish","weight":4},{"event_id":"herb_camp","weight":1},{"event_id":"forest_cache","weight":1}]],"boss_enemy_id":"moss_guardian"}
+    ]
+  },
+  {
+    "dungeon_id":"wind_canyon","city_id":"red_sand_city","name":"风蚀峡谷","description":"商队补给线被流沙截断，沙蝎正守着峡谷中的一枚星核碎片。",
+    "unlock_requires":[{"dungeon_id":"echo_forest","difficulty_id":"normal"}],
+    "difficulties":[
+      {"difficulty_id":"normal","name":"普通","recommended_level":5,"enemy_level":6,"xp_multiplier":1.4,"stages":[[{"event_id":"canyon_caravan","weight":2},{"event_id":"sand_hazard","weight":2}],[{"event_id":"sand_scorpion","weight":4},{"event_id":"caravan_rest","weight":1}]],"boss_enemy_id":"dune_scorpion"},
+      {"difficulty_id":"hard","name":"困难","recommended_level":9,"enemy_level":11,"xp_multiplier":1.8,"stages":[[{"event_id":"sand_hazard","weight":3},{"event_id":"canyon_caravan","weight":1}],[{"event_id":"sand_scorpion","weight":5},{"event_id":"caravan_rest","weight":1}]],"boss_enemy_id":"dune_scorpion"}
+    ]
+  },
+  {
+    "dungeon_id":"sunken_corridor","city_id":"white_port","name":"沉船回廊","description":"海底遗迹随着雾潮显现，古老船钟指向被封存的源晶。",
+    "unlock_requires":[{"dungeon_id":"wind_canyon","difficulty_id":"hard"}],
+    "difficulties":[
+      {"difficulty_id":"normal","name":"普通","recommended_level":12,"enemy_level":13,"xp_multiplier":1.8,"stages":[[{"event_id":"mist_choice","weight":2},{"event_id":"sunken_treasure","weight":1}],[{"event_id":"tide_battle","weight":4},{"event_id":"tide_rest","weight":1}]],"boss_enemy_id":"tide_keeper"},
+      {"difficulty_id":"hard","name":"困难","recommended_level":17,"enemy_level":19,"xp_multiplier":2.2,"stages":[[{"event_id":"mist_choice","weight":3},{"event_id":"sunken_treasure","weight":1}],[{"event_id":"tide_battle","weight":5},{"event_id":"tide_rest","weight":1}]],"boss_enemy_id":"tide_keeper"}
+    ]
+  },
+  {
+    "dungeon_id":"core_ruins","city_id":"ash_city","name":"炉心遗迹","description":"古矿道深处的炉心仍在燃烧，星核坠落前的壁画隐藏在火光之后。",
+    "unlock_requires":[{"dungeon_id":"sunken_corridor","difficulty_id":"hard"}],
+    "difficulties":[
+      {"difficulty_id":"hard","name":"困难","recommended_level":22,"enemy_level":24,"xp_multiplier":2.3,"stages":[[{"event_id":"core_hazard","weight":2},{"event_id":"core_story","weight":1}],[{"event_id":"ember_battle","weight":5},{"event_id":"core_rest","weight":1}]],"boss_enemy_id":"core_sentinel"},
+      {"difficulty_id":"core","name":"噩梦","recommended_level":30,"enemy_level":34,"xp_multiplier":2.8,"stages":[[{"event_id":"core_hazard","weight":3},{"event_id":"core_story","weight":1}],[{"event_id":"ember_battle","weight":6},{"event_id":"core_rest","weight":1}]],"boss_enemy_id":"core_sentinel"}
+    ]
+  }
+]

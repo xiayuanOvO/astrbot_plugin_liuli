@@ -1,0 +1,19 @@
+[
+  {"event_id":"lost_traveler","type":"story","title":"林间旅人","text":"一名采药人听见了林地深处重复的钟声，指给你一条安全小路。"},
+  {"event_id":"forest_echo","type":"choice","title":"回声岔路","text":"两条小路传来相同的脚步声。你要跟随萤光，还是循着水声前进？","options":[{"option_id":"glow","text":"跟随萤光，寻找补给","effect":{"type":"rest","hp_percent":0.15,"mp_percent":0.2}},{"option_id":"water","text":"循水声绕过林地","effect":{"type":"currency","amount":8}}]},
+  {"event_id":"slime_skirmish","type":"spirit_battle","title":"史莱姆伏击","text":"几只史莱姆从树根间跃出。","enemy_pool":[{"enemy_id":"forest_slime","weight":4},{"enemy_id":"gray_wolf","weight":1}]},
+  {"event_id":"herb_camp","type":"rest","title":"草药营地","text":"采药人留下了可用的草药。","hp_percent":0.3,"mp_percent":0.35},
+  {"event_id":"forest_cache","type":"treasure","title":"树洞补给","text":"树洞里留有一小袋冒险者公会补给。","currency_amount":12},
+  {"event_id":"canyon_caravan","type":"choice","title":"峡谷商队","text":"商队愿意提供补给，你可以协助守卫，也可以先恢复体力。","options":[{"option_id":"guard","text":"击退沙蝎守卫","effect":{"type":"battle","enemy_id":"sand_scorpionling"}},{"option_id":"rest","text":"使用补给休息","effect":{"type":"rest","hp_percent":0.2,"mp_percent":0.2}}]},
+  {"event_id":"sand_hazard","type":"hazard","title":"流沙地带","text":"脚下的沙层突然塌陷！","damage":10},
+  {"event_id":"sand_scorpion","type":"spirit_battle","title":"沙蝎巡逻","text":"沙蝎从岩缝中包抄过来。","enemy_pool":[{"enemy_id":"sand_scorpionling","weight":4},{"enemy_id":"gray_wolf","weight":1}]},
+  {"event_id":"caravan_rest","type":"rest","title":"商队营地","text":"商队扎营休整。","hp_percent":0.25,"mp_percent":0.25},
+  {"event_id":"mist_choice","type":"choice","title":"雾中岔路","text":"雾中出现两束船灯，一束通往安全舱室，另一束靠近沉船宝库。","options":[{"option_id":"cabin","text":"前往安全舱室","effect":{"type":"rest","hp_percent":0.2,"mp_percent":0.25}},{"option_id":"vault","text":"前往宝库","effect":{"type":"currency","amount":30}}]},
+  {"event_id":"sunken_treasure","type":"treasure","title":"漂浮钱箱","text":"钱箱中还剩一些完好的银币。","currency_amount":25},
+  {"event_id":"tide_battle","type":"spirit_battle","title":"雾潮精灵","text":"水流凝成了精灵的形状，挡住回廊。","enemy_pool":[{"enemy_id":"tide_sprite","weight":4},{"enemy_id":"sand_scorpionling","weight":1}]},
+  {"event_id":"tide_rest","type":"rest","title":"气泡石室","text":"石室中的气泡富含魔力。","hp_percent":0.15,"mp_percent":0.4},
+  {"event_id":"core_hazard","type":"hazard","title":"热浪裂隙","text":"灼热气浪从矿缝喷涌而出！","damage":18},
+  {"event_id":"core_story","type":"story","title":"星核壁画","text":"壁画描绘了星核坠落的前一夜：天空中出现了第二颗暗色星辰。"},
+  {"event_id":"ember_battle","type":"spirit_battle","title":"炉心守卫","text":"矿道守卫精灵从熔岩边缘现身。","enemy_pool":[{"enemy_id":"ember_sprite","weight":4},{"enemy_id":"tide_sprite","weight":1}]},
+  {"event_id":"core_rest","type":"rest","title":"冷却水池","text":"矿工留下的冷却池仍可使用。","hp_percent":0.25,"mp_percent":0.25}
+]

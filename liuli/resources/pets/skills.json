@@ -1,0 +1,56 @@
+[
+  {
+    "skill_id": "tackle",
+    "name": "撞击",
+    "description": "用身体撞击目标。",
+    "mp_cost": 0,
+    "target_type": "single_enemy",
+    "effect_type": "damage",
+    "effect_value": 8
+  },
+  {
+    "skill_id": "acid_splash",
+    "name": "酸液飞溅",
+    "description": "向目标喷出酸液。",
+    "mp_cost": 5,
+    "target_type": "single_enemy",
+    "effect_type": "damage",
+    "effect_value": 18
+  },
+  {
+    "skill_id": "bite",
+    "name": "撕咬",
+    "description": "快速撕咬目标。",
+    "mp_cost": 0,
+    "target_type": "single_enemy",
+    "effect_type": "damage",
+    "effect_value": 12
+  },
+  {
+    "skill_id": "howl",
+    "name": "战吼",
+    "description": "振奋同伴，提高战斗能力。",
+    "mp_cost": 6,
+    "target_type": "all_allies",
+    "effect_type": "buff",
+    "effect_value": 10
+  },
+  {
+    "skill_id": "spark",
+    "name": "星火",
+    "description": "释放一束魔力光点。",
+    "mp_cost": 4,
+    "target_type": "single_enemy",
+    "effect_type": "damage",
+    "effect_value": 14
+  },
+  {
+    "skill_id": "mend",
+    "name": "愈合之光",
+    "description": "以魔力恢复同伴。",
+    "mp_cost": 8,
+    "target_type": "single_ally",
+    "effect_type": "heal",
+    "effect_value": 20
+  }
+]

@@ -1,0 +1,6 @@
+[
+  {"city_id":"brook_city","country_id":"cloud_realm","name":"青溪城","description":"云岚王国的边境小城，也是冒险者公会的新手据点。","dungeon_ids":["echo_forest"],"rest_cost":0,"unlock_requires":[]},
+  {"city_id":"red_sand_city","country_id":"cloud_realm","name":"赤砂城","description":"商队在此集结，城外的峡谷被流沙与沙蝎占据。","dungeon_ids":["wind_canyon"],"rest_cost":0,"unlock_requires":[{"dungeon_id":"echo_forest","difficulty_id":"normal"}]},
+  {"city_id":"white_port","country_id":"north_union","name":"白港城","description":"北境最大港口，沉船回廊的雾潮每天都会涨落。","dungeon_ids":["sunken_corridor"],"rest_cost":0,"unlock_requires":[{"dungeon_id":"wind_canyon","difficulty_id":"hard"}]},
+  {"city_id":"ash_city","country_id":"ember_empire","name":"灰烬城","description":"环绕古矿道兴起的工业城镇，地底热流从未熄灭。","dungeon_ids":["core_ruins"],"rest_cost":0,"unlock_requires":[{"dungeon_id":"sunken_corridor","difficulty_id":"hard"}]}
+]

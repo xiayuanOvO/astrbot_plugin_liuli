@@ -1,0 +1,7 @@
+{
+  "world_id": "aelorn",
+  "name": "艾洛恩大陆",
+  "description": "数百年前星核坠落，源晶散落各地，异变副本与失控精灵随之出现。冒险者公会正调查星核坠落是否会再次发生。",
+  "starting_country_id": "cloud_realm",
+  "starting_city_id": "brook_city"
+}

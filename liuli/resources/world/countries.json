@@ -1,0 +1,5 @@
+[
+  {"country_id":"cloud_realm","name":"云岚王国","aliases":["Y","YL","YLWG"],"description":"森林与山岭环绕的王国，边境最早出现源晶异变。","unlock_requires":[]},
+  {"country_id":"north_union","name":"北境联邦","aliases":["B","BJ","BJLB"],"description":"由北方港口城邦结成的联邦，海雾中不断传出沉船的钟声。","unlock_requires":[{"dungeon_id":"wind_canyon","difficulty_id":"hard"}]},
+  {"country_id":"ember_empire","name":"赤曜帝国","aliases":["C","CY","CYDG"],"description":"建立在火山与古代矿道之上的帝国，炉心遗迹深处仍有源晶脉动。","unlock_requires":[{"dungeon_id":"sunken_corridor","difficulty_id":"hard"}]}
+]
